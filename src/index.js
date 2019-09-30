@@ -14,7 +14,7 @@ function init(){
     dropArea.addEventListener('drop', loadVideo);
 
     document.querySelector('#chooseVideo').addEventListener('change', loadVideo);
-    document.querySelector('#fileChooser').addEventListener('click', ()=>{
+    document.querySelector('#openFile').addEventListener('click', ()=>{
         document.querySelector('#chooseVideo').click();
     });
 }
@@ -48,23 +48,22 @@ function makeUnDroppable(e) {
 
 function loadVideo(e) {
     e.preventDefault();
+    e.stopPropagation();
     var files = [];
-    if(e.dataTransfer){
+    if (e.dataTransfer) {
         files = e.dataTransfer.files;
-    }else if(e.target.files){
+    } else if (e.target.files) {
         files = e.target.files;
-    }else{
+    } else {
         files=[{
             type:'video',
             path: e.target.value
         }];
     }
-
     for (var i = 0; i < files.length; i++) {
-        console.log(files[i]);
-        if(files[i].type.indexOf('video')>-1){
+        if(files[i].type.indexOf('video') > -1){
             var video = document.querySelector('video');
-            video.src=files[i].path;
+            video.src = files[i].path;
             video.play();
         }
     };

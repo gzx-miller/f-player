@@ -1,73 +1,66 @@
-.main{
+.main {
     width: 100%;
     height: 100%;
     background-color: gray;
-
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
 }
-.line{
+
+.line {
     width: 100%;
     height: 50%;
     background-color: blue;
-
     display: flex;
     flex: 1;
     justify-content: flex-start;
     flex-direction: row;
 }
+
 video {
     width: 50%;
     height: 100%;
     flex: 1;
 }
-.dragErea {
+
+.openFile {
+    font-size: 16px;
     width: 100px;
-    height: 100px;
-    color: red;
-    background-color: blue;
-}
-
-.fileChooser{
-    width:160;
     color: white;
-    background: gray;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    background-color: #666666;
+    margin: 20px;
 }
 
-.dropArea{
-    width:300px;
-    height:160px;
-    overflow:hidden;
-    position:absolute;
-    border:5px dashed rgba(180,180,180,.7);
-    border-radius:20px;
-    padding:10px;
+.openFile:hover {
+    background-color: #45b005;
+}
+
+.dropArea {
+    color: white;
+    background-color: #333333;
+    width: 300px;
+    height: 160px;
     position:absolute;
     top:calc(50% - 105px);
     left:calc(50% - 160px);
-    background:rgba(0,0,0,.7);
-    box-shadow: 0 0 10px rgb(0,0,0);
     transition: opacity 500ms ease-out,
-        border-radius 300ms,
         background-color 300ms;
     -webkit-app-region: no-drag;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 
-.dropZone{
+.dropZone {
+    font-size: 16px;
     width:100%;
-    font-size:30px;
     text-align: center;
-    margin-bottom: 10px;
-    pointer-events: none;
 }
 
 .dropArea.droppableArea{
-    border-radius:5px;
-    border-color:rgba(180,220,180,.7);
-    background:rgba(20,50,20,.7);
+    background:#444444;
 }
 
 .player{
