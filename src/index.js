@@ -10,6 +10,7 @@ function init(){
     var dropArea = document.querySelector('#dropArea');
     dropArea.addEventListener('dragleave', makeUnDroppable);
     dropArea.addEventListener('dragenter', makeDroppable);
+    dropArea.addEventListener('dragover', makeDroppable);
     dropArea.addEventListener('drop', loadVideo);
 
     document.querySelector('#chooseVideo').addEventListener('change', loadVideo);
