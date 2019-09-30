@@ -12,12 +12,8 @@ const createWindow = function() {
     main_window = new BrowserWindow({
         width: default_width,
         height: default_height,
-        frame: true,
-        titleBarStyle: 'customButtonsOnHover',
-        transparent: true,
-        webPreferences: {
-            nodeIntegration: true
-        }
+        frame: false,
+        transparent: true
     });
     main_window.loadURL(`file://${__dirname}/index.html`);
     main_window.setMinimumSize(min_width, min_height);

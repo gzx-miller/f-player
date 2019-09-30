@@ -7,15 +7,17 @@
     <script src="./index.js"></script>
   </head>
   <body>
-    <div class="application" id="application">
-        <section id='playerContainer' class='player'>
-            <h1 id='errMsg' class="errMsg"></h1>
-            <video id='videoContainer' class='video draggable' ></video>
+    <div id="header" class="header" >
+        <h1 id='errMsg' class="errMsg"></h1>
+    </div>
+    <div id="application" class="application" >
+        <section class='player'>
+            <video id='videoContainer' class='videoContainer' controls></video>
             <section id='dropArea' class='dropArea'>
                 <div class='dropZone'> Drag a video file into here</div>
                 <button id='openFile' class='openFile'> Open File </button>
             </section>
-            <input type='file' accept="video/*" id='chooseVideo' class='chooseVideo hide' />
+            <input type='file' accept="video/*" id='chooseVideo' class='hide' />
         </section>
         <!-- <div class="main">
             <div class="line">
