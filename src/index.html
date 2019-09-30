@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>F-Players</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <div class="application" id="application">
+        <section id='playerContainer' class='player'>
+            <h1 id='errMsg' class="errMsg"></h1>
+            <video id='videoContainer' class='video draggable' ></video>
+            <section id='dropArea' class='dropArea'>
+                <div class='dropZone'> Drag video </div>
+                <button id='fileChooser' class='fileChooser'> Choose File </button>
+            </section>
+            <input type='file' accept="video/*" id='chooseVideo' class='chooseVideo hide' />
+        </section>
+        <!-- <div class="main">
+            <div class="line">
+                <video controls>
+                    <source src="media/2kvideo.mp4" type="video/mp4">
+                </video>
+                <video controls>
+                    <source src="media/2kvideo.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="line">
+                <video controls>
+                    <source src="media/2kvideo.mp4" type="video/mp4">
+                </video>
+                <video controls>
+                    <source src="media/2kvideo.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div> -->
+    </div>
+  </body>
+</html>
