@@ -1,34 +1,36 @@
 window.addEventListener('DOMContentLoaded', init);
 
-function init(){
-    var video = document.querySelector('#videoContainer');
-    video.addEventListener('play', playing);
-    video.addEventListener('ended', ended);
-    video.addEventListener('error', (e) => videoError('Video Error'));
-    video.addEventListener('stalled', (e) => videoError('Video Stalled'));
-
-    var dropArea = document.querySelector('#dropArea');
-    dropArea.addEventListener('dragleave', makeUnDroppable);
-    dropArea.addEventListener('dragenter', makeDroppable);
-    dropArea.addEventListener('dragover', makeDroppable);
-    dropArea.addEventListener('drop', loadVideo);
-
-    document.querySelector('#chooseVideo').addEventListener('change', loadVideo);
-    document.querySelector('#openFile').addEventListener('click', ()=>{
-        document.querySelector('#chooseVideo').click();
-    });
+function init() {
+    for(let i = 1; i <= 4; ++ i) {
+        var video = document.querySelector('#videoContainer-' + i);
+        video.addEventListener('play', (e) => { playing(e, i) });
+        video.addEventListener('ended', (e) => { ended(e, i) });
+        video.addEventListener('error', (e) => videoError('Video Error at -' + i));
+        video.addEventListener('stalled', (e) => videoError('Video Stalled at -' + i));
+    
+        var dropArea = document.querySelector('#dropArea-' + i);
+        dropArea.addEventListener('dragleave', makeUnDroppable);
+        dropArea.addEventListener('dragenter', makeDroppable);
+        dropArea.addEventListener('dragover', makeDroppable);
+        dropArea.addEventListener('drop', (e) => { loadVideo(e, i) });
+    
+        document.querySelector('#chooseVideo-' + i).addEventListener('change', (e) => { loadVideo(e, i) });
+        document.querySelector('#openFile-' + i).addEventListener('click', () => {
+            document.querySelector('#chooseVideo-' + i).click();
+        });
+    }
 }
 
-function playing(e){
-    showFileArea(false);
+function playing(e, i){
+    showFileArea(false, i);
 }
 
-function ended(e){
-    showFileArea(true);
+function ended(e, i){
+    showFileArea(true, i);
 }
 
-function showFileArea(show){
-    var dropArea = document.querySelector('#dropArea');
+function showFileArea(show, i){
+    var dropArea = document.querySelector('#dropArea-' + i);
     show? dropArea.classList.remove('hide'): dropArea.classList.add('hide');
 }
 
@@ -46,7 +48,7 @@ function makeUnDroppable(e) {
     e.target.classList.remove('droppableArea');
 };
 
-function loadVideo(e) {
+function loadVideo(e, index) {
     e.preventDefault();
     e.stopPropagation();
     var files = [];
@@ -62,7 +64,7 @@ function loadVideo(e) {
     }
     for (var i = 0; i < files.length; i++) {
         if(files[i].type.indexOf('video') > -1){
-            var video = document.querySelector('video');
+            var video = document.querySelector('#videoContainer-' + index);
             video.src = files[i].path;
             video.play();
         }
