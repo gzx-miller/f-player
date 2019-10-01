@@ -2,10 +2,11 @@ const {
     app, globalShortcut, BrowserWindow, ipcMain, ipcRenderer
 } = require('electron');
 
-const min_width = 640;
-const min_height = 480;
-let default_width = 1080;
-let default_height = 400;
+const min_width = 800;
+const min_height = 600;
+let default_width = 1280;
+let default_height = 720;
+let showDevTools = false;
 
 let main_window;
 const createWindow = function() {
@@ -24,12 +25,14 @@ const createWindow = function() {
         console.warn(`on resize `);
         main_window.setAspectRatio(default_width/default_height);
     });
-    main_window.webContents.openDevTools();
 };
 
 const registerShortcut = function(){
-    globalShortcut.register('CmdOrCtrl+W', () => {
-        console.warn(`shortcut: CmdOrCtrl+W`);
+    globalShortcut.register('CmdOrCtrl+F12', () => {
+        console.warn(`shortcut: CmdOrCtrl+F12`);
+        (showDevTools = !showDevTools)?
+            main_window.webContents.openDevTools() : 
+            main_window.webContents.closeDevTools();
     })
 }
 
@@ -38,9 +41,7 @@ app.on('ready', () => {
     registerShortcut();
 });
 app.on('window-all-closed', () => {
-    if(process.platform !== 'darwin'){
-        app.quit();
-    }
+    main_window = null;
 });
 app.on('activate', () => {
     if(main_window === null){

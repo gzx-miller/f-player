@@ -4,7 +4,6 @@
     left: 0px;
     width: 100%;
     height: 100%;
-    background-color: gray;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -14,7 +13,6 @@
     position: absolute;
     top: 2px;
     left: 0px;
-    background-color: red; 
     opacity: 0;
     z-index: 10;
     width: 100%;
@@ -25,7 +23,6 @@
 .line {
     width: 100%;
     height: 50%;
-    background-color: blue;
     display: flex;
     flex: 1;
     justify-content: flex-start;
@@ -77,8 +74,8 @@
     text-align: center;
 }
 
-.dropArea.droppableArea{
-    background:#555555;
+.dropArea.droppableArea {
+    background:#45b005;
 }
 
 .player{
