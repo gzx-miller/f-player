@@ -1,5 +1,5 @@
 const {
-    app, globalShortcut, BrowserWindow, ipcMain, ipcRenderer
+    app, globalShortcut, BrowserWindow, ipcMain
 } = require('electron');
 
 const min_width = 800;

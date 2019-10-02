@@ -2,6 +2,16 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
     try {
+        document.querySelector('#max_btn').onclick = () => {
+            console.log("on click max");
+        };
+        document.querySelector('#min_btn').onclick = () => {
+            console.log("on click min");
+        };
+        document.querySelector('#close_btn').onclick = () => {
+            console.log("on click close");
+        };
+
         for(let i = 1; i <= 4; ++ i) {
             let video = document.querySelector('#videoContainer-' + i);
             video.addEventListener('play', (e) => { playStart(i) });

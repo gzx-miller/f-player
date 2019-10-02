@@ -1,3 +1,9 @@
+body {
+    margin: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden; 
+}
+
 .main {
     position: absolute;
     top: 0px;
@@ -13,7 +19,7 @@
     position: absolute;
     top: 2px;
     left: 0px;
-    opacity: 0;
+    opacity: 1;
     z-index: 10;
     width: 100%;
     height: 20px;
@@ -30,8 +36,8 @@
 }
 
 .videoContainer {
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
     flex: 1;
 }
 
@@ -70,32 +76,61 @@
 
 .dropZone {
     font-size: 16px;
-    width:100%;
+    width: 100%;
     text-align: center;
 }
 
 .dropArea.droppableArea {
-    background:#45b005;
+    background: #45b005;
 }
 
-.player{
-    background:rgb(0,0,0);
-    height:100%;
-    width:100%;
+.player {
+    background: rgb(0,0,0);
+    height: 100%;
+    width: 100%;
 }
 
 .errMsg {
+    width: 200px;
     background-color: yellow;
 }
 
-.hide{
-    display:none;
+.hide {
+    display: none;
 }
 
-body {
-    margin: 0px;
-    border: 0px;
-    padding: 0px;
-    overflow-x: hidden;
-    overflow-y: hidden; 
+.window_btns {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+.min_btn {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background-image: url("./png/min.png");
+}
+.min_btn:hover {
+    background-position: -20px 0px;
+}
+.max_btn {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background-image: url("./png/max.png");
+}
+.max_btn:hover {
+    background-position: -20px 0px;
+}
+.close_btn {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background-image: url("./png/close.png");
+}
+.close_btn:hover {
+    background-position: -20px 0px;
 }
