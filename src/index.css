@@ -36,17 +36,22 @@ body {
 }
 
 .videoContainer {
+    position: absolute;
+    left: 0px;
+    top: 0px;
     width: 100%;
     height: 100%;
-    flex: 1;
 }
 
 .openFile {
     font-size: 16px;
     width: 100px;
+    height: 26px;
+    line-height: 26px;
     color: white;
     background-color: #666666;
     margin: 20px;
+    border-width: 0px;
 }
 
 .openFile:hover {
@@ -61,8 +66,8 @@ body {
 .dropArea {
     color: white;
     background-color: #444444;
-    width: 300px;
-    height: 160px;
+    width: 50%;
+    height: 50%;
     position: absolute; margin: auto; top: 0px; bottom: 0px; left: 0px; right: 0px;
     transition: opacity 500ms ease-out,
         background-color 300ms;
@@ -109,30 +114,20 @@ body {
     justify-content: flex-start;
     flex-direction: row;
 }
-.min_btn {
+.win_btn {
     width: 20px;
     height: 20px;
     margin-right: 5px;
+}
+.win_btn:hover {
+    background-position: -20px 0px;
+}
+.min_btn {
     background-image: url("./png/min.png");
 }
-.min_btn:hover {
-    background-position: -20px 0px;
-}
 .max_btn {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
     background-image: url("./png/max.png");
 }
-.max_btn:hover {
-    background-position: -20px 0px;
-}
 .close_btn {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
     background-image: url("./png/close.png");
-}
-.close_btn:hover {
-    background-position: -20px 0px;
 }
