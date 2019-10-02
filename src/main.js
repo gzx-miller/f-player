@@ -14,7 +14,10 @@ const createWindow = function() {
         width: default_width,
         height: default_height,
         frame: false,
-        transparent: true
+        transparent: true,
+        webPreferences: {
+            nodeIntegration: true
+        }
     });
     main_window.loadURL(`file://${__dirname}/index.html`);
     main_window.setMinimumSize(min_width, min_height);
@@ -24,6 +27,9 @@ const createWindow = function() {
     main_window.on('resize',() => {
         console.warn(`on resize `);
         main_window.setAspectRatio(default_width/default_height);
+    });
+    main_window.once('ready-to-show', () => {
+        main_window.show();
     });
 };
 
@@ -42,6 +48,7 @@ app.on('ready', () => {
 });
 app.on('window-all-closed', () => {
     main_window = null;
+    app.quit();
 });
 app.on('activate', () => {
     if(main_window === null){
@@ -71,4 +78,17 @@ ipcMain.on('ondragstart', (event, filePath) => {
       file: filePath,
       icon: '/png/add.png'
     })
-  })
+});
+
+ipcMain.on('switch_min', (event, arg) => {
+    (main_window.isMinimized()) ? 
+        main_window.restore() : 
+        main_window.minimize();
+});
+let isMaxed  = false;
+ipcMain.on('switch_max', (event, arg) => {
+    //(main_window.isMaximized()) ? 
+    (isMaxed = !isMaxed)?
+        main_window.maximize():
+        main_window.unmaximize();
+});

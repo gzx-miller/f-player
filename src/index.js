@@ -1,15 +1,17 @@
+const { ipcRenderer } = require('electron');
+
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
     try {
-        document.querySelector('#max_btn').onclick = () => {
-            console.log("on click max");
+        document.querySelector('#max_btn').onclick = (e) => {
+            ipcRenderer.send('switch_max', '');
         };
         document.querySelector('#min_btn').onclick = () => {
-            console.log("on click min");
+            ipcRenderer.send('switch_min', '');
         };
         document.querySelector('#close_btn').onclick = () => {
-            console.log("on click close");
+            window.close();
         };
 
         for(let i = 1; i <= 4; ++ i) {
