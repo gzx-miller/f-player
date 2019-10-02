@@ -1,7 +1,7 @@
 body {
     margin: 0px;
     overflow-x: hidden;
-    overflow-y: hidden; 
+    overflow-y: hidden;
 }
 
 .main {
@@ -18,9 +18,9 @@ body {
 .header {
     position: absolute;
     top: 2px;
-    left: 0px;
+    right: 75px;
     opacity: 1;
-    z-index: 10;
+    z-index: 3;
     width: 100%;
     height: 20px;
     -webkit-app-region: drag;
@@ -101,9 +101,11 @@ body {
 
 .window_btns {
     position: absolute;
-    top: 2px;
-    right: 2px;
+    height: 30px;
     display: flex;
+    z-index: 4;
+    top: -12px;
+    right: -72px;
     justify-content: flex-start;
     flex-direction: row;
 }
