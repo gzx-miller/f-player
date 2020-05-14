@@ -3,6 +3,10 @@ const { ipcRenderer } = require('electron');
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
+    window.onresize = function() {
+        document.documentElement.style.fontSize=`${(window.outerWidth / 980) }px`;
+    }
+    window.onresize();
     try {
         document.querySelector('#max_btn').onclick = (e) => {
             ipcRenderer.send('switch_max', '');

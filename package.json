@@ -5,16 +5,16 @@
   "description": "f-player",
   "main": "src/main.js",
   "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
+    "debug": "electron-forge start",
+    "build": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
   "author": {
-    "name": "guozhenxing",
-    "email": "guozhenxing@qiyi.com"
+    "name": "gzx_miller",
+    "email": "gzx_miller@foxmail.com"
   },
   "license": "MIT",
   "config": {

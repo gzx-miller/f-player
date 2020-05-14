@@ -1,13 +1,13 @@
 body {
-    margin: 0px;
+    margin: 0rem;
     overflow-x: hidden;
     overflow-y: hidden;
 }
 
 .main {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0rem;
+    left: 0rem;
     width: 100%;
     height: 100%;
     display: flex;
@@ -22,7 +22,7 @@ body {
     right: 75px;
     opacity: 1;
     z-index: 3;
-    height: 20px;
+    height: 30px;
     -webkit-app-region: drag;
 }
 
@@ -37,21 +37,21 @@ body {
 
 .videoContainer {
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0rem;
+    top: 0rem;
     width: 100%;
     height: 100%;
 }
 
 .openFile {
-    font-size: 16px;
-    width: 100px;
-    height: 26px;
-    line-height: 26px;
+    font-size: 16rem;
+    width: 100rem;
+    height: 26rem;
+    line-height: 26rem;
     color: white;
     background-color: #666666;
-    margin: 20px;
-    border-width: 0px;
+    margin: 20rem;
+    border-width: 0rem;
 }
 
 .openFile:hover {
@@ -68,7 +68,7 @@ body {
     background-color: #444444;
     width: 50%;
     height: 50%;
-    position: absolute; margin: auto; top: 0px; bottom: 0px; left: 0px; right: 0px;
+    position: absolute; margin: auto; top: 0rem; bottom: 0rem; left: 0rem; right: 0rem;
     transition: opacity 500ms ease-out,
         background-color 300ms;
     -webkit-app-region: no-drag;
@@ -80,7 +80,7 @@ body {
 }
 
 .dropZone {
-    font-size: 16px;
+    font-size: 16rem;
     width: 100%;
     text-align: center;
 }
@@ -96,8 +96,9 @@ body {
 }
 
 .errMsg {
-    width: 200px;
+    width: 200rem;
     background-color: yellow;
+    display: none;
 }
 
 .hide {
@@ -106,11 +107,11 @@ body {
 
 .window_btns {
     position: absolute;
+    top: 0px;
+    right: -72px;
     height: 30px;
     display: flex;
     z-index: 4;
-    top: -12px;
-    right: -72px;
     justify-content: flex-start;
     flex-direction: row;
 }

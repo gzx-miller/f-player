@@ -87,7 +87,7 @@ ipcMain.on('switch_min', (event, arg) => {
 });
 let isMaxed  = false;
 ipcMain.on('switch_max', (event, arg) => {
-    //(main_window.isMaximized()) ? 
+    //(main_window.isMaximized()) ?            // This function can't working well.
     (isMaxed = !isMaxed)?
         main_window.maximize():
         main_window.unmaximize();
